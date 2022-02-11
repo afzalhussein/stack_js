@@ -1,5 +1,6 @@
 # stack_js
+
 Stack implementation in plain Javascript
 
-Additional: 
+Additional:
 Unit tests
