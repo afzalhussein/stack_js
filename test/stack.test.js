@@ -33,8 +33,8 @@ describe('Stack tests ', ()=> {
     test('Peek returns element at top', ()=>{
         const stack = new Stack();
         stack.push('hello');
-        expect((stack.peek()).data).toBe('hello');
-        expect((stack.peek()).next).toBe(null);
+        expect((stack.peek()).data).toMatch(/hello/);
+        expect((stack.peek()).next).toBeNull();
     });
     test('size after push increases', ()=>{
         const stack = new Stack();
@@ -48,6 +48,11 @@ describe('Stack tests ', ()=> {
         const previous_size = stack.size;
         stack.pop();
         expect(stack.size).toBeLessThan(previous_size);
+    });
+    test('pop deletes element at top and returns deleted element', ()=>{
+        const stack = new Stack();
+        stack.push('hello');
+        expect(stack.pop()).toEqual({_data:'hello', _next: null});
     });
 });
 
