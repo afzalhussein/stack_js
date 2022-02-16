@@ -15,6 +15,11 @@ console.log('Peek returns element at top:', stack.peek());
 console.log('Size before pop:', stack.size);
 console.log('Pop deletes element at top and returns deleted element:', stack.pop());
 console.log('Pop deletes element at top and size changes:', stack.size);
+try {
+    stack.push();
+  } catch (e) {
+    console.log('Passing nothing in data throws: ', e.message=="IllegalArgumentException");
+  }
 try{
   stack.pop();
 } catch(e) {
