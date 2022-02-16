@@ -54,6 +54,18 @@ describe('Stack tests ', ()=> {
         stack.push('hello');
         expect(stack.pop()).toEqual({_data:'hello', _next: null});
     });
+    test('passing nothing in push data throws', ()=>{
+        const stack = new Stack();
+        expect(()=>stack.push()).toThrow("IllegalArgumentException");
+    });
+    test('Pop causes error if stack is empty', ()=>{
+        const stack = new Stack();
+        expect(()=>stack.pop()).toThrow('Stack is empty');
+    });
+    test('contains returns false if data does not exist in stack', ()=>{
+        const stack = new Stack();
+        expect(stack.contains('hello')).toBeFalsy();
+    });
 });
 
 
